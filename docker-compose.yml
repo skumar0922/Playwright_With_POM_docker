@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  playwright-service:
+    image: playwright
+    build: .
+    container_name: playwright-container
+    volumes:
+      - $PWD:/app # Mounts the current directory to /app in the container
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+      - PATH=/usr/lib/jvm/java-11-openjdk-amd64/bin:$PATH
+    working_dir: /app # Sets the working directory inside the container
+    command: npm run test # Default command to run tests
