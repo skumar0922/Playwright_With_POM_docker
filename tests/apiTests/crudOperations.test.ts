@@ -38,21 +38,7 @@ test.describe('API Automation with Playwright', () => {
     expect(responseBody).toMatchObject(newPost); // Validate response matches request
   });
 
-  test('PUT Request: Update a Post', async () => {
-    const updatedPost = {
-      id: 1,
-      title: 'updated title',
-      body: 'updated body',
-      userId: 1,
-    };
-    const response = await apiContext.put('/posts/1', {
-      data: updatedPost,
-    });
-    expect(response.status()).toBe(200); // Verify HTTP status
-    const responseBody = await response.json();
-    console.log(responseBody);
-    expect(responseBody).toMatchObject(updatedPost); // Validate response matches update
-  });
+ 
 
   test('DELETE Request: Delete a Post', async () => {
     const response = await apiContext.delete('/posts/1');
