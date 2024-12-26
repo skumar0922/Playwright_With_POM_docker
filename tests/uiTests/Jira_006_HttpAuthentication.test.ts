@@ -19,10 +19,8 @@ test.describe("Network Playwright", async()=>{
         page = await context.newPage();
         await page.goto("https://the-internet.herokuapp.com/basic_auth");
         await page.waitForLoadState();
-        await page.waitForTimeout(2000);
         const message =  await page.locator("div[class='example'] p").textContent();
         expect(message).toContain("Congratulations! You must have the proper credentials.");
-        await page.pause();
         await page.close();
     })
 

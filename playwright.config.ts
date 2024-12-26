@@ -17,6 +17,7 @@ export default defineConfig({
   testMatch: [
     '**/snapshotTests/**/*.test.ts', // Match snapshot tests
     '**/uiTests/**/*.test.ts',       // Match UI tests
+    '**/apiTests/**/*.test.ts',      // Match API Tests
   ],
   /* Run tests in files in parallel */
   fullyParallel: true,
