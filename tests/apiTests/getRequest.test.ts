@@ -17,4 +17,6 @@ test("Get Request", async ({ request }) => {
   
     // Assert the first name of the first user in the "data" array
     expect(responseBody.data[0].first_name).toBe('Michael');
+
+    console.log("responseBody : ",responseBody)
   });

@@ -20,7 +20,7 @@ test("Post Request", async ({ request }) => {
   
     // Parse the response body as JSON
     const responseBody = await response.json();
-  
+
     // Print the response body
     console.log('Response Body:', responseBody);
   
