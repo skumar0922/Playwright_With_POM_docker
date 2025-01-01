@@ -7,7 +7,7 @@ test.describe("Network Playwright", async()=>{
 
     test("Http Authentication", async()=>{
        browser = await chromium.launch({
-        headless:false
+        headless:true
        });
        context = await browser.newContext({
             httpCredentials : {

@@ -30,18 +30,18 @@ test.describe("Preserving Authentication Using Storage State", async () => {
   // Test case to verify the URL after login
   test("Verify URL", async () => {
     // Assert the current page URL contains the expected path
-    await expect(page.url()).toContain("developer.servicenow.com/dev.do");
+    await expect.soft("Url not matched", page.url()).toContain("developer.servicenow.com/dev.do");
 
     // Locate the welcome text and validate its content
     const welcomeText = await page.locator(".dps-page-header-title.-big").textContent();
-    await expect(welcomeText).toContain("Hello, battulas");
+    await expect.soft(welcomeText).toContain("Hello, battulas");
   });
 
   // Test case to verify the welcome message displayed on the page
   test("Verify Welcome Message", async () => {
     // Locate and validate the welcome text on the page
     const welcomeText = await page.locator(".dps-page-header-title.-big").textContent();
-    await expect(welcomeText).toContain("Hello, battulas");
+    await expect.soft(welcomeText).toContain("Hello, battulas");
   });
 
   // After each test, close the browser to clean up resources
